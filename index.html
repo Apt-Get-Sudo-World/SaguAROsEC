@@ -1,0 +1,1170 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+  
+  <title>SaguaroSec - Your home for Cybersecurity</title>
+  
+  
+  
+  
+<style>
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap");
+@font-face {
+  font-family: "Bogart";
+  src: url("/bogart-semibold.woff2") format("woff");
+}
+html {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Oswald";
+  --w: #c3c4d0;
+  --r: #9a977f;
+  --bl: #1f1f21;
+  --b: #373528;
+  --y: #bcc9ca;
+  padding: 0;
+  margin: 0;
+  --expo: cubic-bezier(1, 0, 0, 1);
+  --elastic: cubic-bezier(0.375, 0.885, 0.32, 1.125);
+  background: var(--w);
+}
+body #wrap {
+  perspective: 80vmin;
+  perspective-origin: 50% 0vh;
+  position: fixed;
+  overflow: hidden;
+  height: 100vh;
+}
+body * {
+  box-sizing: border-box;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+body input,
+body .cyberservice {
+  cursor: pointer;
+  transform: scale(0.5) translateZ(10vmin);
+}
+body input,
+body .cyberservice {
+  position: fixed;
+  top: 0vmin;
+  right: 3vmin;
+  z-index: 20;
+  width: 7vmin;
+  height: 7vmin;
+  opacity: 0;
+}
+body input:hover ~ .cyberservice > div,
+body .cyberservice:hover ~ .cyberservice > div {
+  background-position: 50% 50%;
+  transition: background-position 0.3s var(--expo) 0s;
+}
+body input:hover ~ .cyberservice > div:before, body input:hover ~ .cyberservice > div:after,
+body .cyberservice:hover ~ .cyberservice > div:before,
+body .cyberservice:hover ~ .cyberservice > div:after {
+  background-position: 100% 50%;
+}
+body input:checked ~ .cyberservice,
+body .cyberservice:checked ~ .cyberservice {
+  background: var(--bl);
+  box-shadow: 0 0 0 2vmin var(--bl);
+  transition: 0s ease-in-out 1.25s, box-shadow 0.5s var(--expo) 1.25s;
+}
+body input:checked ~ .cyberservice > div,
+body .cyberservice:checked ~ .cyberservice > div {
+  background-position: 100% 50%;
+  transition: background-position 0.3s var(--expo) 0s;
+}
+body input:checked ~ .cyberservice > div:before, body input:checked ~ .cyberservice > div:after,
+body .cyberservice:checked ~ .cyberservice > div:before,
+body .cyberservice:checked ~ .cyberservice > div:after {
+  background: var(--y);
+  transform: translate(1vmin, 5.25vmin) rotate(-45deg);
+  transition: transform 0.4s var(--elastic) 0.75s, background 0.75s ease-in-out;
+}
+body input:checked ~ .cyberservice > div:after,
+body .cyberservice:checked ~ .cyberservice > div:after {
+  transform: translate(-1vmin, 0vmin) rotate(45deg);
+}
+body input:checked ~ #wrap nav > ul,
+body .cyberservice:checked ~ #wrap nav > ul {
+  padding: 6vmin 6vmin;
+  box-shadow: inset 0 0 0 calc(6vmin - 2px) var(--bl), inset 0 0 0 6vmin var(--w);
+  transition: 2s ease-in-out 0s;
+}
+body input:checked ~ #wrap nav > ul > li,
+body .cyberservice:checked ~ #wrap nav > ul > li {
+  padding: 1vmin 3vmin;
+}
+body input:checked ~ #wrap section,
+body input:checked ~ #wrap nav,
+body .cyberservice:checked ~ #wrap section,
+body .cyberservice:checked ~ #wrap nav {
+  transition: transform 0.75s var(--expo) 0.5s;
+}
+body input:checked ~ #wrap section div img,
+body input:checked ~ #wrap nav div img,
+body .cyberservice:checked ~ #wrap section div img,
+body .cyberservice:checked ~ #wrap nav div img {
+  box-shadow: 0 0 0 -1vmin var(--w), 0 0 0 calc(-1vmin + 1px) var(--y), 0 5vmin 10vmin -15vmin var(--bl);
+  filter: saturate(0) blur(4px);
+  opacity: 0;
+  transition: 0.3s var(--expo) 0s, opacity 0.5s ease-in-out 0.3s;
+}
+body input:checked ~ #wrap section div p,
+body input:checked ~ #wrap nav div p,
+body .cyberservice:checked ~ #wrap section div p,
+body .cyberservice:checked ~ #wrap nav div p {
+  transition: transform 0.3s var(--expo) 0.3s;
+  transform-origin: top;
+  transform: scaleY(0);
+}
+body input:checked ~ #wrap section div p:before,
+body input:checked ~ #wrap nav div p:before,
+body .cyberservice:checked ~ #wrap section div p:before,
+body .cyberservice:checked ~ #wrap nav div p:before {
+  transition: transform 0.3s var(--expo) 0s;
+  transform-origin: bottom;
+  transform: scaleY(1);
+}
+body input:checked ~ #wrap section div p:after,
+body input:checked ~ #wrap nav div p:after,
+body .cyberservice:checked ~ #wrap section div p:after,
+body .cyberservice:checked ~ #wrap nav div p:after {
+  transition: transform 0.5s var(--expo) 0s, background-size 0.5s var(--expo) 0s;
+  transform: scaleX(0);
+  background-size: 0vmin 0vmin, 100% 2px;
+}
+body input:checked ~ #wrap section > ul > li:after,
+body input:checked ~ #wrap nav > ul > li:after,
+body .cyberservice:checked ~ #wrap section > ul > li:after,
+body .cyberservice:checked ~ #wrap nav > ul > li:after {
+  transition: transform 0.5s var(--expo) 1.75s;
+  transform: scaleX(1);
+}
+body input:checked ~ #wrap section > ul li,
+body input:checked ~ #wrap nav > ul li,
+body .cyberservice:checked ~ #wrap section > ul li,
+body .cyberservice:checked ~ #wrap nav > ul li {
+  transform: rotateX(0deg) translateZ(0px);
+}
+body input:checked ~ #wrap section > ul li:before,
+body input:checked ~ #wrap nav > ul li:before,
+body .cyberservice:checked ~ #wrap section > ul li:before,
+body .cyberservice:checked ~ #wrap nav > ul li:before {
+  transform: scaleX(1);
+  transition: transform 1s var(--expo);
+}
+body input:checked ~ #wrap section > ul li:nth-of-type(1),
+body input:checked ~ #wrap nav > ul li:nth-of-type(1),
+body .cyberservice:checked ~ #wrap section > ul li:nth-of-type(1),
+body .cyberservice:checked ~ #wrap nav > ul li:nth-of-type(1) {
+  transition: 0.2s ease-in-out, transform 0.75s var(--expo) 0.8166666667s;
+}
+body input:checked ~ #wrap section > ul li:nth-of-type(1):before,
+body input:checked ~ #wrap nav > ul li:nth-of-type(1):before,
+body .cyberservice:checked ~ #wrap section > ul li:nth-of-type(1):before,
+body .cyberservice:checked ~ #wrap nav > ul li:nth-of-type(1):before {
+  transition-delay: 1.5666666667s;
+}
+body input:checked ~ #wrap section > ul li:nth-of-type(2),
+body input:checked ~ #wrap nav > ul li:nth-of-type(2),
+body .cyberservice:checked ~ #wrap section > ul li:nth-of-type(2),
+body .cyberservice:checked ~ #wrap nav > ul li:nth-of-type(2) {
+  transition: 0.2s ease-in-out, transform 0.75s var(--expo) 0.8833333333s;
+}
+body input:checked ~ #wrap section > ul li:nth-of-type(2):before,
+body input:checked ~ #wrap nav > ul li:nth-of-type(2):before,
+body .cyberservice:checked ~ #wrap section > ul li:nth-of-type(2):before,
+body .cyberservice:checked ~ #wrap nav > ul li:nth-of-type(2):before {
+  transition-delay: 1.6333333333s;
+}
+body input:checked ~ #wrap section > ul li:nth-of-type(3),
+body input:checked ~ #wrap nav > ul li:nth-of-type(3),
+body .cyberservice:checked ~ #wrap section > ul li:nth-of-type(3),
+body .cyberservice:checked ~ #wrap nav > ul li:nth-of-type(3) {
+  transition: 0.2s ease-in-out, transform 0.75s var(--expo) 0.95s;
+}
+body input:checked ~ #wrap section > ul li:nth-of-type(3):before,
+body input:checked ~ #wrap nav > ul li:nth-of-type(3):before,
+body .cyberservice:checked ~ #wrap section > ul li:nth-of-type(3):before,
+body .cyberservice:checked ~ #wrap nav > ul li:nth-of-type(3):before {
+  transition-delay: 1.7s;
+}
+body input:checked ~ #wrap section > ul li:nth-of-type(4),
+body input:checked ~ #wrap nav > ul li:nth-of-type(4),
+body .cyberservice:checked ~ #wrap section > ul li:nth-of-type(4),
+body .cyberservice:checked ~ #wrap nav > ul li:nth-of-type(4) {
+  transition: 0.2s ease-in-out, transform 0.75s var(--expo) 1.0166666667s;
+}
+body input:checked ~ #wrap section > ul li:nth-of-type(4):before,
+body input:checked ~ #wrap nav > ul li:nth-of-type(4):before,
+body .cyberservice:checked ~ #wrap section > ul li:nth-of-type(4):before,
+body .cyberservice:checked ~ #wrap nav > ul li:nth-of-type(4):before {
+  transition-delay: 1.7666666667s;
+}
+body input:checked ~ #wrap section > ul li:nth-of-type(5),
+body input:checked ~ #wrap nav > ul li:nth-of-type(5),
+body .cyberservice:checked ~ #wrap section > ul li:nth-of-type(5),
+body .cyberservice:checked ~ #wrap nav > ul li:nth-of-type(5) {
+  transition: 0.2s ease-in-out, transform 0.75s var(--expo) 1.0833333333s;
+}
+body input:checked ~ #wrap section > ul li:nth-of-type(5):before,
+body input:checked ~ #wrap nav > ul li:nth-of-type(5):before,
+body .cyberservice:checked ~ #wrap section > ul li:nth-of-type(5):before,
+body .cyberservice:checked ~ #wrap nav > ul li:nth-of-type(5):before {
+  transition-delay: 1.8333333333s;
+}
+body input:checked ~ #wrap section > ul li:nth-of-type(6),
+body input:checked ~ #wrap nav > ul li:nth-of-type(6),
+body .cyberservice:checked ~ #wrap section > ul li:nth-of-type(6),
+body .cyberservice:checked ~ #wrap nav > ul li:nth-of-type(6) {
+  transition: 0.2s ease-in-out, transform 0.75s var(--expo) 1.15s;
+}
+body input:checked ~ #wrap section > ul li:nth-of-type(6):before,
+body input:checked ~ #wrap nav > ul li:nth-of-type(6):before,
+body .cyberservice:checked ~ #wrap section > ul li:nth-of-type(6):before,
+body .cyberservice:checked ~ #wrap nav > ul li:nth-of-type(6):before {
+  transition-delay: 1.9s;
+}
+body input:checked ~ #wrap section > ul li:nth-of-type(7),
+body input:checked ~ #wrap nav > ul li:nth-of-type(7),
+body .cyberservice:checked ~ #wrap section > ul li:nth-of-type(7),
+body .cyberservice:checked ~ #wrap nav > ul li:nth-of-type(7) {
+  transition: 0.2s ease-in-out, transform 0.75s var(--expo) 1.2166666667s;
+}
+body input:checked ~ #wrap section > ul li:nth-of-type(7):before,
+body input:checked ~ #wrap nav > ul li:nth-of-type(7):before,
+body .cyberservice:checked ~ #wrap section > ul li:nth-of-type(7):before,
+body .cyberservice:checked ~ #wrap nav > ul li:nth-of-type(7):before {
+  transition-delay: 1.9666666667s;
+}
+body input:checked ~ #wrap section > ul li:nth-of-type(8),
+body input:checked ~ #wrap nav > ul li:nth-of-type(8),
+body .cyberservice:checked ~ #wrap section > ul li:nth-of-type(8),
+body .cyberservice:checked ~ #wrap nav > ul li:nth-of-type(8) {
+  transition: 0.2s ease-in-out, transform 0.75s var(--expo) 1.2833333333s;
+}
+body input:checked ~ #wrap section > ul li:nth-of-type(8):before,
+body input:checked ~ #wrap nav > ul li:nth-of-type(8):before,
+body .cyberservice:checked ~ #wrap section > ul li:nth-of-type(8):before,
+body .cyberservice:checked ~ #wrap nav > ul li:nth-of-type(8):before {
+  transition-delay: 2.0333333333s;
+}
+body input:checked ~ #wrap section > ul li:nth-of-type(9),
+body input:checked ~ #wrap nav > ul li:nth-of-type(9),
+body .cyberservice:checked ~ #wrap section > ul li:nth-of-type(9),
+body .cyberservice:checked ~ #wrap nav > ul li:nth-of-type(9) {
+  transition: 0.2s ease-in-out, transform 0.75s var(--expo) 1.35s;
+}
+body input:checked ~ #wrap section > ul li:nth-of-type(9):before,
+body input:checked ~ #wrap nav > ul li:nth-of-type(9):before,
+body .cyberservice:checked ~ #wrap section > ul li:nth-of-type(9):before,
+body .cyberservice:checked ~ #wrap nav > ul li:nth-of-type(9):before {
+  transition-delay: 2.1s;
+}
+body input:checked ~ #wrap section > ul li:nth-of-type(10),
+body input:checked ~ #wrap nav > ul li:nth-of-type(10),
+body .cyberservice:checked ~ #wrap section > ul li:nth-of-type(10),
+body .cyberservice:checked ~ #wrap nav > ul li:nth-of-type(10) {
+  transition: 0.2s ease-in-out, transform 0.75s var(--expo) 1.4166666667s;
+}
+body input:checked ~ #wrap section > ul li:nth-of-type(10):before,
+body input:checked ~ #wrap nav > ul li:nth-of-type(10):before,
+body .cyberservice:checked ~ #wrap section > ul li:nth-of-type(10):before,
+body .cyberservice:checked ~ #wrap nav > ul li:nth-of-type(10):before {
+  transition-delay: 2.1666666667s;
+}
+body input:checked ~ #wrap section > ul li:nth-of-type(11),
+body input:checked ~ #wrap nav > ul li:nth-of-type(11),
+body .cyberservice:checked ~ #wrap section > ul li:nth-of-type(11),
+body .cyberservice:checked ~ #wrap nav > ul li:nth-of-type(11) {
+  transition: 0.2s ease-in-out, transform 0.75s var(--expo) 1.4833333333s;
+}
+body input:checked ~ #wrap section > ul li:nth-of-type(11):before,
+body input:checked ~ #wrap nav > ul li:nth-of-type(11):before,
+body .cyberservice:checked ~ #wrap section > ul li:nth-of-type(11):before,
+body .cyberservice:checked ~ #wrap nav > ul li:nth-of-type(11):before {
+  transition-delay: 2.2333333333s;
+}
+body input:checked ~ #wrap section > ul li:nth-of-type(12),
+body input:checked ~ #wrap nav > ul li:nth-of-type(12),
+body .cyberservice:checked ~ #wrap section > ul li:nth-of-type(12),
+body .cyberservice:checked ~ #wrap nav > ul li:nth-of-type(12) {
+  transition: 0.2s ease-in-out, transform 0.75s var(--expo) 1.55s;
+}
+body input:checked ~ #wrap section > ul li:nth-of-type(12):before,
+body input:checked ~ #wrap nav > ul li:nth-of-type(12):before,
+body .cyberservice:checked ~ #wrap section > ul li:nth-of-type(12):before,
+body .cyberservice:checked ~ #wrap nav > ul li:nth-of-type(12):before {
+  transition-delay: 2.3s;
+}
+body input:checked ~ #wrap section > ul li:nth-of-type(13),
+body input:checked ~ #wrap nav > ul li:nth-of-type(13),
+body .cyberservice:checked ~ #wrap section > ul li:nth-of-type(13),
+body .cyberservice:checked ~ #wrap nav > ul li:nth-of-type(13) {
+  transition: 0.2s ease-in-out, transform 0.75s var(--expo) 1.6166666667s;
+}
+body input:checked ~ #wrap section > ul li:nth-of-type(13):before,
+body input:checked ~ #wrap nav > ul li:nth-of-type(13):before,
+body .cyberservice:checked ~ #wrap section > ul li:nth-of-type(13):before,
+body .cyberservice:checked ~ #wrap nav > ul li:nth-of-type(13):before {
+  transition-delay: 2.3666666667s;
+}
+body input:checked ~ #wrap section > ul li:nth-of-type(14),
+body input:checked ~ #wrap nav > ul li:nth-of-type(14),
+body .cyberservice:checked ~ #wrap section > ul li:nth-of-type(14),
+body .cyberservice:checked ~ #wrap nav > ul li:nth-of-type(14) {
+  transition: 0.2s ease-in-out, transform 0.75s var(--expo) 1.6833333333s;
+}
+body input:checked ~ #wrap section > ul li:nth-of-type(14):before,
+body input:checked ~ #wrap nav > ul li:nth-of-type(14):before,
+body .cyberservice:checked ~ #wrap section > ul li:nth-of-type(14):before,
+body .cyberservice:checked ~ #wrap nav > ul li:nth-of-type(14):before {
+  transition-delay: 2.4333333333s;
+}
+body input:checked ~ #wrap section > ul li:nth-of-type(15),
+body input:checked ~ #wrap nav > ul li:nth-of-type(15),
+body .cyberservice:checked ~ #wrap section > ul li:nth-of-type(15),
+body .cyberservice:checked ~ #wrap nav > ul li:nth-of-type(15) {
+  transition: 0.2s ease-in-out, transform 0.75s var(--expo) 1.75s;
+}
+body input:checked ~ #wrap section > ul li:nth-of-type(15):before,
+body input:checked ~ #wrap nav > ul li:nth-of-type(15):before,
+body .cyberservice:checked ~ #wrap section > ul li:nth-of-type(15):before,
+body .cyberservice:checked ~ #wrap nav > ul li:nth-of-type(15):before {
+  transition-delay: 2.5s;
+}
+body input:checked ~ #wrap section > ul li:nth-of-type(16),
+body input:checked ~ #wrap nav > ul li:nth-of-type(16),
+body .cyberservice:checked ~ #wrap section > ul li:nth-of-type(16),
+body .cyberservice:checked ~ #wrap nav > ul li:nth-of-type(16) {
+  transition: 0.2s ease-in-out, transform 0.75s var(--expo) 1.8166666667s;
+}
+body input:checked ~ #wrap section > ul li:nth-of-type(16):before,
+body input:checked ~ #wrap nav > ul li:nth-of-type(16):before,
+body .cyberservice:checked ~ #wrap section > ul li:nth-of-type(16):before,
+body .cyberservice:checked ~ #wrap nav > ul li:nth-of-type(16):before {
+  transition-delay: 2.5666666667s;
+}
+body input:checked ~ #wrap section > ul li:nth-of-type(17),
+body input:checked ~ #wrap nav > ul li:nth-of-type(17),
+body .cyberservice:checked ~ #wrap section > ul li:nth-of-type(17),
+body .cyberservice:checked ~ #wrap nav > ul li:nth-of-type(17) {
+  transition: 0.2s ease-in-out, transform 0.75s var(--expo) 1.8833333333s;
+}
+body input:checked ~ #wrap section > ul li:nth-of-type(17):before,
+body input:checked ~ #wrap nav > ul li:nth-of-type(17):before,
+body .cyberservice:checked ~ #wrap section > ul li:nth-of-type(17):before,
+body .cyberservice:checked ~ #wrap nav > ul li:nth-of-type(17):before {
+  transition-delay: 2.6333333333s;
+}
+body input:checked ~ #wrap section > ul li:nth-of-type(18),
+body input:checked ~ #wrap nav > ul li:nth-of-type(18),
+body .cyberservice:checked ~ #wrap section > ul li:nth-of-type(18),
+body .cyberservice:checked ~ #wrap nav > ul li:nth-of-type(18) {
+  transition: 0.2s ease-in-out, transform 0.75s var(--expo) 1.95s;
+}
+body input:checked ~ #wrap section > ul li:nth-of-type(18):before,
+body input:checked ~ #wrap nav > ul li:nth-of-type(18):before,
+body .cyberservice:checked ~ #wrap section > ul li:nth-of-type(18):before,
+body .cyberservice:checked ~ #wrap nav > ul li:nth-of-type(18):before {
+  transition-delay: 2.7s;
+}
+body input:checked ~ #wrap section > ul li:nth-of-type(19),
+body input:checked ~ #wrap nav > ul li:nth-of-type(19),
+body .cyberservice:checked ~ #wrap section > ul li:nth-of-type(19),
+body .cyberservice:checked ~ #wrap nav > ul li:nth-of-type(19) {
+  transition: 0.2s ease-in-out, transform 0.75s var(--expo) 2.0166666667s;
+}
+body input:checked ~ #wrap section > ul li:nth-of-type(19):before,
+body input:checked ~ #wrap nav > ul li:nth-of-type(19):before,
+body .cyberservice:checked ~ #wrap section > ul li:nth-of-type(19):before,
+body .cyberservice:checked ~ #wrap nav > ul li:nth-of-type(19):before {
+  transition-delay: 2.7666666667s;
+}
+body input:checked ~ #wrap section > ul li:nth-of-type(20),
+body input:checked ~ #wrap nav > ul li:nth-of-type(20),
+body .cyberservice:checked ~ #wrap section > ul li:nth-of-type(20),
+body .cyberservice:checked ~ #wrap nav > ul li:nth-of-type(20) {
+  transition: 0.2s ease-in-out, transform 0.75s var(--expo) 2.0833333333s;
+}
+body input:checked ~ #wrap section > ul li:nth-of-type(20):before,
+body input:checked ~ #wrap nav > ul li:nth-of-type(20):before,
+body .cyberservice:checked ~ #wrap section > ul li:nth-of-type(20):before,
+body .cyberservice:checked ~ #wrap nav > ul li:nth-of-type(20):before {
+  transition-delay: 2.8333333333s;
+}
+body input:checked ~ #wrap section,
+body .cyberservice:checked ~ #wrap section {
+  transform: translateX(-100vw) rotateY(-65deg) skewY(0deg) scaleX(2) scaleY(7) translateZ(0px);
+  will-change: transform;
+}
+body input:checked ~ #wrap h1,
+body .cyberservice:checked ~ #wrap h1 {
+  transform: translateX(-50%) scaleY(7) translateY(-150%) translateZ(0px);
+  transition: transform 0.3s var(--expo) 0.15s;
+}
+body input:checked ~ #wrap h1:before,
+body .cyberservice:checked ~ #wrap h1:before {
+  background-position: 50% 100%;
+  transition: background-position 0.3s var(--expo) 0.05s;
+}
+body input:checked ~ #wrap h1 span:first-of-type,
+body .cyberservice:checked ~ #wrap h1 span:first-of-type {
+  transform: translateX(35%);
+}
+body input:checked ~ #wrap h1 span:last-of-type,
+body .cyberservice:checked ~ #wrap h1 span:last-of-type {
+  transform: translateX(-35%);
+}
+body input:checked ~ #wrap h1 strong,
+body .cyberservice:checked ~ #wrap h1 strong {
+  transform: scaleY(10) translateY(-10vmin);
+}
+body input:checked ~ #wrap nav,
+body .cyberservice:checked ~ #wrap nav {
+  transform: rotateX(0deg) translateX(0) skewY(0deg);
+}
+body .cyberservice {
+  pointer-events: none;
+  opacity: 1;
+  transition: 0s ease-in-out;
+}
+body .cyberservice > div {
+  position: absolute;
+  width: 100%;
+  height: 1vmin;
+  background: linear-gradient(to left, var(--bl) 33%, var(--r) 33%, var(--r) 66%, rgba(255, 255, 255, 0.0001) 66%);
+  background-size: 300% 100%;
+  background-position: 100% 50%;
+  border-radius: 10vmin;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background-position 0.3s var(--expo);
+}
+body .cyberservice > div:before, body .cyberservice > div:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, var(--bl) 50%, var(--r) 50%);
+  background-size: 200% 100%;
+  background-position: 0% 50%;
+  border-radius: inherit;
+  top: -2.5vmin;
+  transition: transform 0.4s ease-in-out 0s, background-position 0.3s var(--expo);
+  transform-origin: 0% 0%;
+}
+body .cyberservice > div:after {
+  top: 2.5vmin;
+  transform-origin: 100% 100%;
+}
+body h1 {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  z-index: 2;
+  font-family: "Bogart";
+  font-size: 4vmin;
+  margin: 0;
+  padding-left: 6vmin;
+  width: 100vw;
+  text-align: left;
+  transform: translateX(-50%) translateZ(0px);
+  transition: transform 0.5s var(--expo) 0.75s;
+  transform-origin: bottom;
+}
+body h1 strong,
+body h1 span {
+  display: inline-block;
+}
+body h1 span {
+  transition: 0.75s var(--expo) 1s;
+  color: var(--bl);
+}
+body h1 strong {
+  vertical-align: middle;
+  font-size: 6vmin;
+  text-transform: uppercase;
+  margin: 0 0.5vmin;
+  transform-origin: bottom;
+  transition: 0.5s var(--elastic) 1.25s;
+  color: var(--r);
+}
+body h1:before {
+  content: "";
+  position: absolute;
+  width: 100vw;
+  height: 150%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateZ(0px);
+  z-index: -2;
+  background: linear-gradient(to bottom, var(--w), rgba(255, 255, 255, 0.0001));
+}
+body nav,
+body section,
+body h1 {
+  backface-visibility: hidden;
+}
+body h1,
+body section {
+  display: inline-block;
+  transform-origin: top right;
+  will-change: transform;
+}
+body section {
+  padding: 10vmin 12vmin 8vmin;
+  background: radial-gradient(circle at center, var(--r) 0.5px, var(--w) 0.5px, var(--w) 5px) 50% 50%/5px 5px repeat;
+  color: var(--w);
+  overflow: scroll;
+  height: 100vh;
+  transform: translateZ(0px);
+  box-shadow: 10vmin 0 0 var(--r);
+}
+body section div {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15vmin 0;
+  position: relative;
+  --x: 10vmin;
+}
+body section div img,
+body section div p {
+  width: 50%;
+  position: relative;
+}
+body section div img {
+  transform: scale(1.25) translateX(var(--x));
+  filter: saturate(1) blur(0px);
+  box-shadow: 0 0 0 2.5vmin var(--w), 0 0 0 calc(2.5vmin + 1px) var(--y), 0 5vmin 10vmin -5vmin var(--bl);
+  opacity: 1;
+}
+body section div p {
+  font-size: 3.25vmin;
+  margin: 0;
+  z-index: 2;
+  background: var(--w);
+  color: var(--bl);
+  padding: 2rem;
+  position: relative;
+  transform: scaleY(1);
+  transform-origin: bottom;
+  box-shadow: 0 5vmin 10vmin -7.5vmin var(--bl);
+}
+body section div p:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: var(--r);
+  transform-origin: top;
+  top: 0;
+  left: 0;
+  transform: scaleY(0);
+}
+body section div p:after {
+  content: "";
+  position: absolute;
+  height: 5vmin;
+  width: 25%;
+  right: 100%;
+  background: radial-gradient(circle at center, var(--r) 1vmin, rgba(255, 255, 255, 0.001) 1vmin), linear-gradient(to right, var(--r), var(--w));
+  background-size: 2vmin 2vmin, 100% 2px;
+  background-repeat: no-repeat;
+  background-position: 0px 50%, 50% 50%;
+  top: calc(50% - 2.5vmin);
+  transform-origin: right;
+}
+body section div:nth-of-type(even) {
+  flex-direction: row-reverse;
+  --x: -10vmin;
+}
+body section div:nth-of-type(even) p:after {
+  right: auto;
+  left: 100%;
+  transform-origin: left;
+}
+body section div:nth-of-type(1) img {
+  transition: 0.5s var(--expo) 1.6s, opacity 2s ease-in-out 0s;
+}
+body section div:nth-of-type(1) p {
+  transition: transform 0.5s var(--expo) 1.1s;
+}
+body section div:nth-of-type(1) p:before,
+body section div:nth-of-type(1) p:after {
+  transition: transform 0.5s var(--expo) 1.6s, background-size 0.75s var(--expo) 2.1s;
+}
+body section div:nth-of-type(2) img {
+  transition: 0.5s var(--expo) 1.7s, opacity 2s ease-in-out 0s;
+}
+body section div:nth-of-type(2) p {
+  transition: transform 0.5s var(--expo) 1.2s;
+}
+body section div:nth-of-type(2) p:before,
+body section div:nth-of-type(2) p:after {
+  transition: transform 0.5s var(--expo) 1.7s, background-size 0.75s var(--expo) 2.2s;
+}
+body section div:nth-of-type(3) img {
+  transition: 0.5s var(--expo) 1.8s, opacity 2s ease-in-out 0s;
+}
+body section div:nth-of-type(3) p {
+  transition: transform 0.5s var(--expo) 1.3s;
+}
+body section div:nth-of-type(3) p:before,
+body section div:nth-of-type(3) p:after {
+  transition: transform 0.5s var(--expo) 1.8s, background-size 0.75s var(--expo) 2.3s;
+}
+body section,
+body nav {
+  transition: transform 0.75s var(--expo) 0s;
+}
+body nav {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  background: var(--bl);
+  color: var(--w);
+  padding: 0;
+  transform: translateX(100vw) rotateY(65deg) skewY(60deg) scaleY(7) translateZ(0px);
+  transform-origin: 50% left;
+  overflow: hidden;
+}
+body nav ul {
+  list-style-type: none;
+  padding: 0;
+  transform: translateZ(0px);
+  position: relative;
+  overflow: hidden;
+}
+body nav > ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  height: 100vh;
+  margin: 0;
+  transform: translateZ(0px);
+  transition: 0.5s var(--expo);
+  box-shadow: inset 0 0 0 calc(-1vmin - 1px) var(--bl), inset 0 0 0 calc(-1vmin + 1px) var(--w);
+}
+body nav > ul li {
+  padding: 1vmin;
+  transform: translateY(75vh) translateZ(0px);
+  backface-visibility: hidden;
+  will-change: transform;
+  transition: 1s var(--expo);
+  overflow: hidden;
+}
+body nav > ul > li {
+  box-sizing: border-box;
+  transform: translateY(100vh) translateZ(0px);
+}
+body nav > ul > li:first-of-type {
+  grid-area: 1/1/2/4;
+  font-size: 3vmin;
+  position: relative;
+}
+body nav > ul > li:first-of-type:after {
+  content: "";
+  position: absolute;
+  width: calc(100% - 4vmin);
+  height: 1px;
+  bottom: 0;
+  left: 2vmin;
+  background: var(--r);
+  transition: transform 0.5s var(--expo);
+  transform: scaleX(0);
+}
+body nav > ul > li:first-of-type ul {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 0;
+}
+body nav > ul > li:first-of-type ul > li {
+  color: var(--w);
+  transform: translateY(100vh);
+  cursor: pointer;
+  text-align: center;
+  flex-grow: 1;
+  overflow: visible;
+  margin-top: -1vmin;
+}
+body nav > ul > li:first-of-type ul > li:hover {
+  color: var(--r);
+}
+body nav > ul > li:first-of-type ul > li:hover:after {
+  transform: translateY(0);
+}
+body nav > ul > li:first-of-type ul > li:before {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 50%;
+  right: 0;
+  top: calc(50% - 1vmin);
+  background: var(--r);
+  transform-origin: bottom;
+  transform: scaleY(0);
+}
+body nav > ul > li:first-of-type ul > li:after {
+  content: "🌵";
+  position: absolute;
+  left: 1rem;
+  filter: saturate(0) brightness(2);
+  transition: 0.3s ease-in-out;
+  transform: translateY(250%);
+  display: inline-block;
+}
+body nav > ul > li:first-of-type ul > li:last-of-type:before {
+  display: none;
+}
+body nav > ul > li:nth-of-type(2) {
+  grid-area: 2/1/8/4;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-items: stretch;
+  max-width: 100%;
+  font-family: "Bogart";
+  color: var(--y);
+  font-size: 3vmin;
+}
+body nav > ul > li:nth-of-type(2) > ul > li {
+  position: relative;
+  overflow: hidden;
+  margin-right: 1.5vmin;
+}
+body nav > ul > li:nth-of-type(2) > ul > li:nth-of-type(even) {
+  margin-right: 0;
+  margin-left: 1.5vmin;
+}
+body nav > ul > li:nth-of-type(2) ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  width: 100%;
+  font-family: "Bogart";
+  flex-grow: 2;
+  color: var(--r);
+}
+body nav > ul > li:nth-of-type(2) ul > li {
+  font-family: "Bogart";
+  font-size: 3vmin;
+  padding-left: 0;
+  position: relative;
+}
+body nav > ul > li:nth-of-type(2) ul > li:before {
+  content: "";
+  position: absolute;
+  width: calc(100% - 12.5vmin);
+  right: 0;
+  height: 1px;
+  background: var(--w);
+  top: 5.25vmin;
+  transition: transform 0.5s var(--expo) 0s;
+  transform-origin: left;
+  transform: scaleX(0);
+}
+body nav > ul > li:nth-of-type(2) ul > li:nth-of-type(2) > ul li:after {
+  content: "💽";
+}
+body nav > ul > li:nth-of-type(2) ul > li:nth-of-type(3) > ul li:after {
+  content: "📓";
+}
+body nav > ul > li:nth-of-type(2) ul > li:nth-of-type(4) > ul li:after {
+  content: "🖊️";
+}
+body nav > ul > li:nth-of-type(2) ul > li > ul li {
+  font-size: 2vmin;
+  color: var(--w);
+  font-family: "Oswald";
+  cursor: pointer;
+  text-align: right;
+}
+body nav > ul > li:nth-of-type(2) ul > li > ul li:after {
+  content: "🖥️";
+  margin-left: 0vmin;
+  display: inline-block;
+  filter: saturate(0);
+  transition: 0.3s ease-in-out;
+  transform: translateY(-250%) scale(1.25);
+}
+body nav > ul > li:nth-of-type(2) ul > li > ul li:hover {
+  color: var(--r);
+}
+body nav > ul > li:nth-of-type(2) ul > li > ul li:hover:after {
+  margin-left: 2.5vmin;
+  transform: translateY(0) scale(1.5);
+}
+body nav > ul > li:nth-of-type(2) ul > li > ul li:hover + li + li:after {
+  transform: translateY(250%) scale(1.25);
+}
+body nav > ul > li:nth-of-type(2) ul > li > ul li:before {
+  display: none;
+}
+body nav > ul > li:nth-of-type(2) ~ li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--bl);
+  transform-style: preserve-3d;
+  transform: translateY(100vh) translateZ(0px);
+  cursor: pointer;
+  box-shadow: inset 0 0 0 2px var(--bl);
+  background: linear-gradient(to bottom, var(--r) 50%, var(--y) 50%);
+  background-size: 100% 200%;
+  background-position: 50% 0px;
+}
+body nav > ul > li:nth-of-type(2) ~ li:hover {
+  background-position: 50% 100%;
+}
+body nav > ul > li:nth-of-type(2) ~ li:nth-of-type(even) {
+  background: linear-gradient(to top, var(--r) 50%, var(--y) 50%);
+  background-size: 100% 200%;
+  background-position: 50% 100%;
+}
+body nav > ul > li:nth-of-type(2) ~ li:nth-of-type(even):hover {
+  background-position: 50% 0px;
+}
+body nav > ul > li {
+  font-family: "Bogart";
+  font-size: 3vmin;
+  position: relative;
+  color: var(--y);
+}
+body nav > ul > li ul {
+  font-family: "Oswald";
+  font-size: 3.5vmin;
+}
+</style>
+
+  
+  
+  
+  
+
+</head>
+
+<body translate="no" >
+  <input type="checkbox" />
+<div class="cyberservice">
+  <div></div>
+</div>
+<div id="wrap">
+  <h1><span>Saguaro</span><strong>Sec</strong><span>CyberSecurity</span></h1>
+  <nav class="menu">
+    <ul>
+      <li>PROFILE
+        <ul>
+          <li>LOCAL</li>
+          <li>EXPERIENCED</li>
+          <li>COMPETITIVE</li>
+        </ul>
+      </li>
+      <li>SERVICES
+        <ul>
+          <li>Computer Services
+            <ul>
+              <li>Malware / Ransomeware Recovery</li>
+              <li>Data Loss Protection</li>
+              <li>Cybersecurity Consulting</li>
+            </ul>
+          </li>
+          <li>Data Services
+            <ul>
+              <li>Failed Drive Recovery</li>
+              <li>Forensic Recovery / Investigation</li>
+              <li>Malware Analysis</li>
+              <li>Reverse Engenering</li>
+            </ul>
+          </li>
+          <li>Employee Education
+            <ul>
+              <li>Phishing Education</li>
+              <li>Cybersecurity 101</li>
+              <li>Cybersecurity 201</li>
+              <li>Cybersecurity For Managers</li>
+            </ul>
+          </li>
+          <li>Policy Development
+            <ul>
+              <li>Disaster Recovery Responce Plan</li>
+              <li>Cybersecurity Responce Plan</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>Mission Statement</li>
+      <li>About Us</li>
+      <li>Join the Mailing List</li>
+    </ul>
+  </nav>
+  <section class="article">
+    <div>
+      <img src="https://images.pexels.com/photos/5380664/pexels-photo-5380664.jpeg?cs=srgb&dl=pexels-tima-miroshnichenko-5380664.jpg&fm=jpg" alt="Cybersecurity Background">
+      <p>Lorem ipsum dolor sit amems voluptates rem at neque quos facere sequi unde optio aliquam!</p>
+    </div>
+    <div>
+      <img src="https://images.pexels.com/photos/2749602/pexels-photo-2749602.jpeg?cs=srgb&dl=pexels-sini-2749602.jpg&fm=jpg" alt="Cactus looks">
+      <!-- photo by Jay Gajjar for Unsplash. Full-size image at: https://unsplash.com/photos/vsYCZVef28E -->
+      <p>Tenetur quod quidem i Modi velit odio nam nulla unde amet odit pariatur at!</p>
+    </div>
+    <div>
+      <img src="https://images.pexels.com/photos/1579363/pexels-photo-1579363.jpeg?cs=srgb&dl=pexels-elena-blessing-1579363.jpg&fm=jpg" alt="Critical Infastructure.">
+      <!-- photo by Melissa Walker Horn for Unsplash. Full size image at: https://unsplash.com/photos/NkwNp3ho-Qw -->
+      <p>Consequatur rerum amet fuga eiendis optio tempora unde earum doloremque commodi laudantium ad nulla vel odio?</p>
+    </div>
+  </section>
+</div>
+  
+  
+      <script id="rendered-js" >
+!(function (n, t) {
+  "object" == typeof exports && "undefined" != typeof module
+    ? (module.exports = t())
+    : "function" == typeof define && define.amd
+    ? define(t)
+    : (n.Splitting = t());
+})(this, function () {
+  "use strict";
+  var u = document,
+    l = u.createTextNode.bind(u);
+  function d(n, t, e) {
+    n.style.setProperty(t, e);
+  }
+  function f(n, t) {
+    return n.appendChild(t);
+  }
+  function p(n, t, e, r) {
+    var i = u.createElement("span");
+    return (
+      t && (i.className = t),
+      e && (!r && i.setAttribute("data-" + t, e), (i.textContent = e)),
+      (n && f(n, i)) || i
+    );
+  }
+  function h(n, t) {
+    return n.getAttribute("data-" + t);
+  }
+  function m(n, t) {
+    return n && 0 != n.length
+      ? n.nodeName
+        ? [n]
+        : [].slice.call(n[0].nodeName ? n : (t || u).querySelectorAll(n))
+      : [];
+  }
+  function o(n) {
+    for (var t = []; n--; ) t[n] = [];
+    return t;
+  }
+  function g(n, t) {
+    n && n.some(t);
+  }
+  function c(t) {
+    return function (n) {
+      return t[n];
+    };
+  }
+  var a = {};
+  function n(n, t, e, r) {
+    return { by: n, depends: t, key: e, split: r };
+  }
+  function e(n) {
+    return (function t(e, n, r) {
+      var i = r.indexOf(e);
+      if (-1 == i)
+        r.unshift(e),
+          g(a[e].depends, function (n) {
+            t(n, e, r);
+          });
+      else {
+        var u = r.indexOf(n);
+        r.splice(i, 1), r.splice(u, 0, e);
+      }
+      return r;
+    })(n, 0, []).map(c(a));
+  }
+  function t(n) {
+    a[n.by] = n;
+  }
+  function v(n, r, i, u, o) {
+    n.normalize();
+    var c = [],
+      a = document.createDocumentFragment();
+    u && c.push(n.previousSibling);
+    var s = [];
+    return (
+      m(n.childNodes).some(function (n) {
+        if (!n.tagName || n.hasChildNodes()) {
+          if (n.childNodes && n.childNodes.length)
+            return s.push(n), void c.push.apply(c, v(n, r, i, u, o));
+          var t = n.wholeText || "",
+            e = t.trim();
+          e.length &&
+            (" " === t[0] && s.push(l(" ")),
+            g(e.split(i), function (n, t) {
+              t && o && s.push(p(a, "whitespace", " ", o));
+              var e = p(a, r, n);
+              c.push(e), s.push(e);
+            }),
+            " " === t[t.length - 1] && s.push(l(" ")));
+        } else s.push(n);
+      }),
+      g(s, function (n) {
+        f(a, n);
+      }),
+      (n.innerHTML = ""),
+      f(n, a),
+      c
+    );
+  }
+  var s = 0;
+  var i = "words",
+    r = n(i, s, "word", function (n) {
+      return v(n, "word", /\s+/, 0, 1);
+    }),
+    y = "chars",
+    w = n(y, [i], "char", function (n, e, t) {
+      var r = [];
+      return (
+        g(t[i], function (n, t) {
+          r.push.apply(r, v(n, "char", "", e.whitespace && t));
+        }),
+        r
+      );
+    });
+  function b(t) {
+    var f = (t = t || {}).key;
+    return m(t.target || "[data-splitting]").map(function (a) {
+      var s = { el: a },
+        n = e(t.by || h(a, "splitting") || y),
+        l = (function (n, t) {
+          for (var e in t) n[e] = t[e];
+          return n;
+        })({}, t);
+      return (
+        g(n, function (n) {
+          if (n.split) {
+            var t = n.by,
+              e = (f ? "-" + f : "") + n.key,
+              r = n.split(a, l, s);
+            e &&
+              ((i = a),
+              (c = (o = "--" + e) + "-index"),
+              g((u = r), function (n, t) {
+                Array.isArray(n)
+                  ? g(n, function (n) {
+                      d(n, c, t);
+                    })
+                  : d(n, c, t);
+              }),
+              d(i, o + "-total", u.length)),
+              (s[t] = r),
+              a.classList.add(t);
+          }
+          var i, u, o, c;
+        }),
+        a.classList.add("splitting"),
+        s
+      );
+    });
+  }
+  function N(n, t, e) {
+    var r = m(t.matching || n.children, n),
+      i = {};
+    return (
+      g(r, function (n) {
+        var t = Math.round(n[e]);
+        (i[t] || (i[t] = [])).push(n);
+      }),
+      Object.keys(i).map(Number).sort().map(c(i))
+    );
+  }
+  (b.html = function (n) {
+    var t = ((n = n || {}).target = p());
+    return (t.innerHTML = n.content), b(n), t.outerHTML;
+  }),
+    (b.add = t);
+  var x = n("lines", [i], "line", function (n, t, e) {
+      return N(n, { matching: e[i] }, "offsetTop");
+    }),
+    T = n("items", s, "item", function (n, t) {
+      return m(t.matching || n.children, n);
+    }),
+    L = n("rows", s, "row", function (n, t) {
+      return N(n, t, "offsetTop");
+    }),
+    k = n("cols", s, "col", function (n, t) {
+      return N(n, t, "offsetLeft");
+    }),
+    A = n("grid", ["rows", "cols"]),
+    C = "layout",
+    M = n(C, s, s, function (n, t) {
+      var e = (t.rows = +(t.rows || h(n, "rows") || 1)),
+        r = (t.columns = +(t.columns || h(n, "columns") || 1));
+      if (
+        ((t.image = t.image || h(n, "image") || n.currentSrc || n.src), t.image)
+      ) {
+        var i = m("img", n)[0];
+        t.image = i && (i.currentSrc || i.src);
+      }
+      t.image && d(n, "background-image", "url(" + t.image + ")");
+      for (var u = e * r, o = [], c = p(s, "cell-grid"); u--; ) {
+        var a = p(c, "cell");
+        p(a, "cell-inner"), o.push(a);
+      }
+      return f(n, c), o;
+    }),
+    S = n("cellRows", [C], "row", function (n, t, e) {
+      var r = t.rows,
+        i = o(r);
+      return (
+        g(e[C], function (n, t, e) {
+          i[Math.floor(t / (e.length / r))].push(n);
+        }),
+        i
+      );
+    }),
+    H = n("cellColumns", [C], "col", function (n, t, e) {
+      var r = t.columns,
+        i = o(r);
+      return (
+        g(e[C], function (n, t) {
+          i[t % r].push(n);
+        }),
+        i
+      );
+    }),
+    O = n("cells", ["cellRows", "cellColumns"], "cell", function (n, t, e) {
+      return e[C];
+    });
+  return t(r), t(w), t(x), t(T), t(L), t(k), t(A), t(M), t(S), t(H), t(O), b;
+});
+    </script>
+
+  
+
+</body>
+
+</html>
+ 
