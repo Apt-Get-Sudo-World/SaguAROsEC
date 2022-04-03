@@ -69,11 +69,11 @@ zoom: 1;
 
 }
 .flex-direction-nav li a {
-	/*  color:#fff; */
+	/*  color:#444; */
 }
 
 .flex-direction-nav li a:hover {
-	/*  color:#fff; */
+	/*  color:#444; */
 	text-decoration:none;
 }
 .flexslider .flex-next {
