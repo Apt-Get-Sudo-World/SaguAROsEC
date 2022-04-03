@@ -99,7 +99,7 @@ sub {
 }
 
 img {
-  width: auto\9;
+  width: 15%;
   height: auto;
   max-width: 100%;
   vertical-align: middle;
@@ -6165,4 +6165,3 @@ a.badge:focus {
 .affix {
   position: fixed;
 }
-
