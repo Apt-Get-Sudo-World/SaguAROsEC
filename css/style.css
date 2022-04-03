@@ -379,12 +379,12 @@ header .logo {
 }
 
 #main-flexslider ul.slides li p {
-	font-size: 72px;
+	font-size: 30px;
 	text-transform: uppercase;
 	position: relative;
 	margin-bottom: 0px;
 	text-align: center;
-	line-height: 1;
+	line-height: 5;
 	color:#fff;
 }
 #main-flexslider.flexslider {
