@@ -31,7 +31,6 @@ body {
   filter: brightness(0.7); /* Darken the background image */
 }
 
-
 section {
   display: grid;
   grid-template-columns: 50% 45%;
@@ -46,25 +45,27 @@ section {
   max-width: 2400px;
 }
 
-.content h1 {
-  font-family: "Comfortaa", sans-serif;
-  font-size: clamp(2rem, 4vw, 3.5rem);
-  font-weight: 700;
-  line-height: 1.2;
-  letter-spacing: 1px;
-  margin-bottom: 36px;
-  color: #fff;
+.text-container {
+  background: rgba(0, 0, 0, 0.6); /* Transparent dark background */
+  padding: 20px;
+  border-radius: 15px; /* Rounded edges */
+  max-width: 800px; /* Optional: to limit the width of the text container */
+  margin: auto; /* Optional: to center the container */
 }
 
-.content p {
-  font-size: clamp(1rem, 4vw, 1.1rem);
-  font-weight: 300;
-  line-height: 1.5;
-  margin-bottom: 30px;
-  color: #fff;
+.text-container h1 {
+  font-weight: bold; /* Make the text bold */
+  color: #fff; /* White color for text */
 }
 
-.content button {
+.text-container p {
+  font-weight: bold; /* Make the text bold */
+  color: #fff; /* White color for text */
+  line-height: 1.6; /* Optional: improve readability */
+}
+
+.text-container button {
+  display: inline-block;
   background: #eaeaea;
   color: #202134;
   font-size: clamp(0.9rem, 4vw, 1rem);
@@ -78,7 +79,7 @@ section {
   cursor: pointer;
 }
 
-.content button:is(:hover, :focus) {
+.text-container button:is(:hover, :focus) {
   transform: scale(0.98);
   background-color: #6f7aa6;
   color: #eaeaea;
@@ -112,7 +113,7 @@ section {
   padding: 6px 10px;
   color: #fff;
   font-size: clamp(0.8rem, 4vw, 0.9rem);
-  font-weight: bold;
+  font-weight: bold; /* Make the text bold */
 }
 
 .dark-text {
@@ -162,7 +163,7 @@ section {
 
 .ratings span {
   font-size: clamp(0.8rem, 4vw, 0.9rem);
-  font-weight: bold;
+  font-weight: bold; /* Make the text bold */
 }
 
 .star {
@@ -197,46 +198,6 @@ section {
   .content h1 {
     margin-bottom: 20px;
   }
-  .text-container {
-  background: rgba(0, 0, 0, 0.6); /* Transparent dark background */
-  padding: 20px;
-  border-radius: 15px; /* Rounded edges */
-  max-width: 800px; /* Optional: to limit the width of the text container */
-  margin: auto; /* Optional: to center the container */
-}
-
-.text-container h1 {
-  font-weight: bold; /* Make the text bold */
-  color: #fff; /* White color for text */
-}
-
-.text-container p {
-  font-weight: bold; /* Make the text bold */
-  color: #fff; /* White color for text */
-  line-height: 1.6; /* Optional: improve readability */
-}
-
-.text-container button {
-  display: inline-block;
-  background: #eaeaea;
-  color: #202134;
-  font-size: clamp(0.9rem, 4vw, 1rem);
-  font-weight: 600;
-  border: 0;
-  outline: 0;
-  padding: 8px 14px;
-  border-radius: 7px;
-  transform: scale(1);
-  transition: all 0.4s ease-in;
-  cursor: pointer;
-}
-
-.text-container button:is(:hover, :focus) {
-  transform: scale(0.98);
-  background-color: #6f7aa6;
-  color: #eaeaea;
-}
-
 }
 @media (max-width: 470px) {
   section {
@@ -248,6 +209,7 @@ section {
     height: 400px;
   }
 }
+
 </style>
 
   
