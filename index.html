@@ -148,7 +148,8 @@ section {
   line-height: 1.6; /* Optional: improve readability */
 }
 
-.text-container button {
+.text-container button,
+.text-container .hero-btn {
   display: inline-block;
   background: #eaeaea;
   color: #202134;
@@ -161,9 +162,11 @@ section {
   transform: scale(1);
   transition: all 0.4s ease-in;
   cursor: pointer;
+  text-decoration: none;
 }
 
-.text-container button:is(:hover, :focus) {
+.text-container button:is(:hover, :focus),
+.text-container .hero-btn:is(:hover, :focus) {
   transform: scale(0.98);
   background-color: #6f7aa6;
   color: #eaeaea;
@@ -332,7 +335,7 @@ section {
             We are dedicated to protecting your business from evolving cyber threats and 
             providing a local solution you can rely on. Trust SaguaroSEC to secure your future today.
           </p>
-          <a href="#contact">Connect With us NOW</a>
+          <a href="#contact" class="hero-btn">Connect With us NOW</a>
         </div>
       </div>
 
