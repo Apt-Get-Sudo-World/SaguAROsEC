@@ -148,7 +148,7 @@ section {
   line-height: 1.6; /* Optional: improve readability */
 }
 
-.text-container button {
+.cta-button {
   display: inline-block;
   background: #eaeaea;
   color: #202134;
@@ -163,10 +163,15 @@ section {
   cursor: pointer;
 }
 
-.text-container button:is(:hover, :focus) {
+.cta-button:is(:hover, :focus) {
   transform: scale(0.98);
   background-color: #6f7aa6;
   color: #eaeaea;
+}
+
+.cta-section {
+  text-align: center;
+  margin: 40px 0;
 }
 
 /* SLIDER */
@@ -332,7 +337,7 @@ section {
             We are dedicated to protecting your business from evolving cyber threats and 
             providing a local solution you can rely on. Trust SaguaroSEC to secure your future today.
           </p>
-          <button>Connect With us NOW</button>
+          <button class="cta-button">Get a Free Consultation</button>
         </div>
       </div>
 
@@ -435,11 +440,17 @@ section {
           </div>
         </div>
       </div>
+      <div class="cta-section">
+        <button class="cta-button">Get a Free Consultation</button>
+      </div>
     </div>
   </section>
 
 
     <footer>
+    <div class="cta-section">
+      <button class="cta-button">Get a Free Consultation</button>
+    </div>
     <div class="footer-links">
       <a href="https://saguarosec.com/privacy.html">Privacy Policy</a>
       <a href="https://saguarosec.com/">Home</a>
