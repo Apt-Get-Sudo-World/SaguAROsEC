@@ -294,6 +294,24 @@ section {
   }
 }
 
+#about {
+  min-height: auto;
+}
+
+#about img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+@media (max-width: 930px) {
+  #about {
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    grid-template-areas: none;
+    gap: 40px;
+  }
+}
+
 </style>
 
   
@@ -312,7 +330,7 @@ section {
       <ul>
         <li><a href="https://saguarosec.com/">Home</a></li>
         <li><a href="#">Services</a></li>
-        <li><a href="#">About Us</a></li>
+        <li><a href="#about">About Us</a></li>
         <li><a href="#">Contact Us</a></li>
       </ul>
     </nav>
@@ -438,13 +456,32 @@ section {
     </div>
   </section>
 
+    <section id="about">
+      <div class="content">
+        <div class="text-container">
+          <h2>About Us</h2>
+          <p>
+            Michael Galde founded SaguaroSEC to bring world-class cybersecurity expertise to his hometown of Tucson.
+            Backed by industry certifications and years of hands-on experience, he leads a team focused on defending
+            local organizations from modern threats.
+          </p>
+          <p>
+            Our mission is to empower Tucson businesses with practical security strategies and community-minded support,
+            helping Southern Arizona thrive in a safer digital landscape.
+          </p>
+        </div>
+      </div>
+      <div>
+        <img src="images/Michael.jpg" alt="Michael Galde, Founder of SaguaroSEC" />
+      </div>
+    </section>
 
     <footer>
-    <div class="footer-links">
-      <a href="https://saguarosec.com/privacy.html">Privacy Policy</a>
-      <a href="https://saguarosec.com/">Home</a>
-      <a href="#">Contact Us</a>
-    </div>
+      <div class="footer-links">
+        <a href="https://saguarosec.com/privacy.html">Privacy Policy</a>
+        <a href="https://saguarosec.com/">Home</a>
+        <a href="#">Contact Us</a>
+      </div>
     <div class="footer-text">
       &copy; 2024 SAGUAROSEC LLC. All rights reserved.
     </div>
